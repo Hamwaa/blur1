@@ -1,6 +1,6 @@
 class Image
-  def initialize(image)
-    @image = image
+  def initialize(array)
+    @image = array
   end
 
   def output_image
