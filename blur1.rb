@@ -1,38 +1,18 @@
-class Card
-  attr_accessor :rank, :suit
-  
-  def initialize(rank, suit)
-    @rank = rank
-    @suit = suit
+class Image
+  def initialize(image)
+    @image = image
   end
 
-  def output_card
-    puts "#{self.rank} of #{self.suit}"
+  def output_image
+    @image.each {|x| puts x.join("-")}
   end
 end
 
-class Deck
-  def initialize
-      @ranks =[*(2..10), 'J', 'Q','K','A']
-      @suits =['Diamonds','Hearts','Spades','Clubs']
-      @cards =[]
+image = Image.new([
+    [0, 0, 0, 0],
+    [0, 1, 0, 0],
+    [0, 0, 0, 1],
+    [0, 0, 0, 0]
+  ])
 
-      @ranks.each do |rank|
-      @suits.each do |suit|
-        @cards << Card.new(rank, suit)
-      end
-    end
-    @cards.shuffle!
-  end
-
-  def shuffle
-    @cards.shuffle!
-  end
-
-  def deal(number)
-    number.times {@cards.shift.output_card}
-  end
-end
-
-deck = Deck.new
-deck.deal(50)
+image.output_image
