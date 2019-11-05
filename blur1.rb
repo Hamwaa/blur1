@@ -1,10 +1,12 @@
 class Image
-  def initialize(array)
-    @image = array
+  def initialize(picture)
+    @image = picture
   end
 
   def output_image
-    @image.each {|x| puts x.join("-")}
+    @image.each do |x| 
+      puts x.join("-")
+    end
   end
 end
 
